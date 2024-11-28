@@ -1,0 +1,63 @@
+./testing.sh
+
+Testing with wrong number of arguments
+Usage: ./crawler seedURL pageDirectory maxDepth
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+testing with out of range depth value\n
+maxDepth out of range.
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Testing with a non-existent link\n
+Failed to initialize the page directory: ../data/letters
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+testing with improper directory
+Failed to initialize the page directory: ../berw/letters
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Crawling letters-2, depth = 3; starting URL depth is 2
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Crawling letters-1, depth = 10
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Crawling letters-2, depth = 6
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Crawling letters-2, depth = 3; starting URL depth is 2
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Running valgrind on crawling letters-1, depth = 4
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Crawling letters-2, depth = 6
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Crawling letters-22, depth = 3
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Sample of two files in letters-22
+
+URL http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+depth 0
+web contents <html>
+URL http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+depth 1
+web contents <html>
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Running Valgrind on toscrape-3, depth = 1
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+==2514802== Memcheck, a memory error detector
+==2514802== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2514802== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==2514802== Command: ./crawler http://cs50tse.cs.dartmouth.edu/tse/letters/index.html ../data/crawldata/letters-1 4
+==2514802== 
+==2514802== 
+==2514802== HEAP SUMMARY:
+==2514802==     in use at exit: 0 bytes in 0 blocks
+==2514802==   total heap usage: 1,444 allocs, 1,444 frees, 307,932 bytes allocated
+==2514802== 
+==2514802== All heap blocks were freed -- no leaks are possible
+==2514802== 
+==2514802== For lists of detected and suppressed errors, rerun with: -s
+==2514802== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Crawling wikipedia_2, depth = 1
+Sample a file in wikipedia
+
+URL http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./C_(programming_language).html
+depth 1
+web contents <!DOCTYPE html>
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-

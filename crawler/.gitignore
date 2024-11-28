@@ -1,0 +1,9 @@
+crawler
+
+# Ignore any log files
+*.log
+
+# Ignore other unnecessary files
+*.swp
+*.swo
+*~

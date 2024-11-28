@@ -1,0 +1,15 @@
+# Object files
+*.o
+
+# Binary
+indexer
+indextest
+
+# Data files
+*.index
+
+# System files
+.DS_Store
+
+# Temporary files
+*~
